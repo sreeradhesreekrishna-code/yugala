@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Users, Sparkles, Moon, Award } from "lucide-react";
+import { Users, Sun, Moon, Award } from "lucide-react";
 import { Reveal } from "./Reveal";
 
 const STATS = [
@@ -25,7 +25,7 @@ const STATS = [
     subtext: "Reported inner peace & balance",
   },
   {
-    icon: Sparkles,
+    icon: Sun,
     value: 15,
     suffix: "+",
     label: "Master Facilitators",
@@ -106,7 +106,7 @@ function StatCard({
         </div>
 
         {/* Clean Standardized Number Typography */}
-        <div className="font-serif text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
+        <div className="font-number text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
           <span className="text-violet">{count.toLocaleString()}</span>
           <span className="text-crimson font-normal ml-0.5">{stat.suffix}</span>
         </div>

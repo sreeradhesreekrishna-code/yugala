@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  Sparkles,
   HeartHandshake,
   Moon,
   Compass,
@@ -37,7 +36,6 @@ import {
   Eye,
   Package,
   Layers,
-  Sparkle,
   ArrowRight,
 } from "lucide-react";
 
@@ -896,7 +894,7 @@ function ContactSection() {
                 </span>
                 <div>
                   <span className="block font-jakarta text-[0.65rem] uppercase text-muted-foreground font-bold">WhatsApp</span>
-                  <a href="https://wa.me/919400898089" className="font-serif text-lg font-bold text-foreground hover:text-violet">
+                  <a href="https://wa.me/919400898089" className="font-number text-lg font-bold text-foreground hover:text-violet">
                     +91 94008 98089
                   </a>
                 </div>
@@ -908,7 +906,7 @@ function ContactSection() {
                 </span>
                 <div>
                   <span className="block font-jakarta text-[0.65rem] uppercase text-muted-foreground font-bold">Phone</span>
-                  <a href="tel:+919400898089" className="font-serif text-lg font-bold text-foreground hover:text-violet">
+                  <a href="tel:+919400898089" className="font-number text-lg font-bold text-foreground hover:text-violet">
                     +91 94008 98089
                   </a>
                 </div>

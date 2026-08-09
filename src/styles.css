@@ -43,6 +43,7 @@
   --color-surface: var(--surface);
   --font-display: "Cormorant Garamond", "Outfit", "Syne", serif;
   --font-syne: "Syne", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 }
@@ -262,7 +263,12 @@
 }
 
 @utility font-outfit {
-  font-family: var(--font-display);
+  font-family: var(--font-outfit);
+}
+
+@utility font-number {
+  font-family: var(--font-outfit);
+  font-variant-numeric: tabular-nums;
 }
 
 @utility font-serif {
