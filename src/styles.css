@@ -6,7 +6,7 @@
 
 /*
  * Yugala Life design system.
- * Dark luxury: brilliant electric violet, deep red, royal gold.
+ * Light Premium Spiritual Wellness: Warm Ivory, Soft Lavender, Blush Pink, Electric Violet, Rose, Warm Gold.
  */
 
 @theme inline {
@@ -41,7 +41,7 @@
   --color-violet: var(--violet);
   --color-crimson: var(--crimson);
   --color-surface: var(--surface);
-  --font-display: "Outfit", "Syne", sans-serif;
+  --font-display: "Cormorant Garamond", "Outfit", "Syne", serif;
   --font-syne: "Syne", sans-serif;
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
@@ -50,62 +50,77 @@
 :root {
   --radius: 1.25rem;
 
-  --background: oklch(0.14 0.045 300);
-  --foreground: oklch(0.95 0.012 300);
-  --surface: oklch(0.19 0.055 305);
+  /* Light Primary Background: Warm Ivory (#FFFDFC) */
+  --background: oklch(0.99 0.005 85);
+  /* Deep Charcoal Text (#241B35) */
+  --foreground: oklch(0.24 0.05 300);
+  /* Supporting Background: Soft Warm Cream (#FFF8F1) */
+  --surface: oklch(0.985 0.01 75);
 
-  --card: oklch(0.21 0.055 303 / 55%);
-  --card-foreground: oklch(0.95 0.012 300);
-  --popover: oklch(0.18 0.05 303);
-  --popover-foreground: oklch(0.95 0.012 300);
+  /* Card: Pure White / Translucent Ivory with Soft Elevation */
+  --card: oklch(1 0 0 / 92%);
+  --card-foreground: oklch(0.24 0.05 300);
+  --popover: oklch(0.99 0.005 85);
+  --popover-foreground: oklch(0.24 0.05 300);
 
-  /* Brilliant electric violet */
-  --primary: oklch(0.58 0.27 300);
-  --primary-foreground: oklch(0.98 0.005 300);
-  --violet: oklch(0.58 0.27 300);
+  /* Brilliant Electric Violet (#5B20B5) */
+  --primary: oklch(0.45 0.24 300);
+  --primary-foreground: oklch(0.99 0.005 85);
+  --violet: oklch(0.48 0.24 300);
 
-  /* Deep red */
-  --secondary: oklch(0.42 0.19 22);
-  --secondary-foreground: oklch(0.97 0.01 30);
-  --crimson: oklch(0.42 0.19 22);
+  /* Rose / Deep Pink (#D94A67) */
+  --secondary: oklch(0.58 0.19 15);
+  --secondary-foreground: oklch(0.99 0.005 85);
+  --crimson: oklch(0.58 0.19 15);
 
-  /* Royal gold */
-  --accent: oklch(0.82 0.14 85);
-  --accent-foreground: oklch(0.17 0.04 300);
-  --gold: oklch(0.82 0.14 85);
-  --gold-soft: oklch(0.9 0.08 88);
+  /* Warm Gold (#D99A18) */
+  --accent: oklch(0.72 0.15 75);
+  --accent-foreground: oklch(0.24 0.05 300);
+  --gold: oklch(0.72 0.15 75);
+  --gold-soft: oklch(0.92 0.07 80);
 
-  --muted: oklch(0.25 0.05 302);
-  --muted-foreground: oklch(0.74 0.03 300);
+  /* Muted Surfaces & Text */
+  --muted: oklch(0.96 0.015 300);
+  --muted-foreground: oklch(0.48 0.03 300);
   --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.98 0.01 30);
-  --border: oklch(0.82 0.14 85 / 18%);
-  --input: oklch(0.82 0.14 85 / 22%);
-  --ring: oklch(0.58 0.27 300);
+  --destructive-foreground: oklch(0.99 0.005 85);
+  --border: oklch(0.92 0.02 300);
+  --input: oklch(0.92 0.02 300);
+  --ring: oklch(0.48 0.24 300);
 
+  /* Ambient Light Gradients */
   --gradient-aura: radial-gradient(
-      60% 60% at 15% 10%,
-      color-mix(in oklab, var(--violet) 45%, transparent),
+      65% 65% at 20% 15%,
+      color-mix(in oklab, var(--violet) 10%, transparent),
       transparent 70%
     ),
     radial-gradient(
-      55% 55% at 90% 25%,
-      color-mix(in oklab, var(--crimson) 45%, transparent),
+      60% 60% at 85% 30%,
+      color-mix(in oklab, var(--crimson) 8%, transparent),
       transparent 70%
+    ),
+    radial-gradient(
+      50% 50% at 50% 80%,
+      color-mix(in oklab, var(--gold) 10%, transparent),
+      transparent 75%
     );
+
   --gradient-gold: linear-gradient(
-    100deg,
+    110deg,
     var(--gold-soft),
-    var(--gold) 45%,
-    color-mix(in oklab, var(--gold) 60%, var(--crimson)) 100%
+    var(--gold) 50%,
+    color-mix(in oklab, var(--gold) 70%, var(--crimson)) 100%
   );
+
   --gradient-royal: linear-gradient(
     135deg,
     var(--violet),
-    color-mix(in oklab, var(--violet) 45%, var(--crimson))
+    color-mix(in oklab, var(--violet) 70%, var(--crimson))
   );
-  --shadow-glow: 0 24px 70px -24px color-mix(in oklab, var(--violet) 65%, transparent);
-  --shadow-gold: 0 18px 50px -20px color-mix(in oklab, var(--gold) 45%, transparent);
+
+  --shadow-glow: 0 18px 50px -15px color-mix(in oklab, var(--violet) 18%, transparent);
+  --shadow-gold: 0 16px 45px -16px color-mix(in oklab, var(--gold) 22%, transparent);
+  --shadow-soft: 0 10px 35px -10px rgba(40, 20, 60, 0.06);
 }
 
 @layer base {
@@ -133,40 +148,35 @@
   h2,
   h3 {
     font-family: var(--font-display);
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: -0.01em;
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--gold) 40%, transparent);
+    background: color-mix(in oklab, var(--violet) 25%, transparent);
+    color: var(--foreground);
   }
 }
 
 @utility text-gilded {
-  background: var(--gradient-gold);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--violet);
+  font-weight: 600;
 }
 
 @utility glass-card {
-  background: linear-gradient(
-    150deg,
-    color-mix(in oklab, var(--surface) 75%, transparent),
-    color-mix(in oklab, var(--background) 70%, transparent)
-  );
-  border: 1px solid color-mix(in oklab, var(--gold) 16%, transparent);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 20px 60px -32px oklch(0 0 0 / 80%);
+  background: #ffffff;
+  border: 1px solid oklch(0.92 0.02 300);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 35px -12px rgba(80, 40, 120, 0.06);
   transition:
-    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.4s ease,
-    box-shadow 0.5s ease;
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    box-shadow 0.4s ease;
 
   &:hover {
-    transform: translateY(-6px);
-    border-color: color-mix(in oklab, var(--gold) 45%, transparent);
-    box-shadow: var(--shadow-glow);
+    transform: translateY(-5px);
+    border-color: color-mix(in oklab, var(--violet) 35%, transparent);
+    box-shadow: 0 16px 45px -14px rgba(80, 40, 120, 0.12);
   }
 }
 
@@ -176,8 +186,8 @@
 
 @utility sacred-grid {
   background-image:
-    radial-gradient(circle at center, color-mix(in oklab, var(--gold) 12%, transparent) 1px, transparent 1px);
-  background-size: 34px 34px;
+    radial-gradient(circle at center, color-mix(in oklab, var(--violet) 10%, transparent) 1px, transparent 1px);
+  background-size: 36px 36px;
 }
 
 @utility gold-rule {
@@ -185,17 +195,17 @@
   background: linear-gradient(
     90deg,
     transparent,
-    color-mix(in oklab, var(--gold) 70%, transparent),
+    color-mix(in oklab, var(--gold) 60%, transparent),
     transparent
   );
 }
 
 @utility reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(24px);
   transition:
-    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 
   &[data-visible="true"] {
     opacity: 1;
@@ -209,7 +219,7 @@
     transform: translate3d(0, 0, 0) scale(1);
   }
   50% {
-    transform: translate3d(0, -26px, 0) scale(1.05);
+    transform: translate3d(0, -18px, 0) scale(1.03);
   }
 }
 
@@ -222,12 +232,12 @@
 @keyframes twinkle {
   0%,
   100% {
-    opacity: 0.15;
+    opacity: 0.2;
     transform: translateY(0);
   }
   50% {
-    opacity: 0.9;
-    transform: translateY(-14px);
+    opacity: 0.8;
+    transform: translateY(-10px);
   }
 }
 
@@ -265,29 +275,27 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 25px -5px color-mix(in oklab, var(--violet) 70%, transparent),
-                0 0 50px -15px color-mix(in oklab, var(--gold) 40%, transparent);
-    border-color: color-mix(in oklab, var(--gold) 50%, transparent);
+    box-shadow: 0 0 20px -5px color-mix(in oklab, var(--violet) 25%, transparent);
+    border-color: color-mix(in oklab, var(--border) 90%, transparent);
   }
   50% {
-    box-shadow: 0 0 45px 5px color-mix(in oklab, var(--violet) 85%, transparent),
-                0 0 80px 10px color-mix(in oklab, var(--gold) 65%, transparent);
-    border-color: color-mix(in oklab, var(--gold) 90%, transparent);
+    box-shadow: 0 0 35px 2px color-mix(in oklab, var(--violet) 35%, transparent);
+    border-color: color-mix(in oklab, var(--violet) 40%, transparent);
   }
 }
 
 @keyframes pulse-ring {
   0% {
-    transform: scale(0.94);
-    opacity: 0.8;
+    transform: scale(0.96);
+    opacity: 0.7;
   }
   50% {
-    transform: scale(1.08);
-    opacity: 0.3;
+    transform: scale(1.05);
+    opacity: 0.25;
   }
   100% {
-    transform: scale(0.94);
-    opacity: 0.8;
+    transform: scale(0.96);
+    opacity: 0.7;
   }
 }
 
@@ -312,23 +320,41 @@
 }
 
 @utility glass-floating-pill {
-  background: color-mix(in oklab, var(--surface) 70%, transparent);
+  background: #ffffff;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid color-mix(in oklab, var(--gold) 20%, transparent);
-  box-shadow: 0 12px 32px -12px oklch(0 0 0 / 70%);
+  border: 1px solid oklch(0.92 0.02 300);
+  box-shadow: 0 8px 24px -8px rgba(40, 20, 60, 0.08);
 }
 
 @utility glow-card-interactive {
-  background: color-mix(in oklab, var(--surface) 65%, transparent);
-  border: 1px solid color-mix(in oklab, var(--gold) 15%, transparent);
+  background: #ffffff;
+  border: 1px solid oklch(0.92 0.02 300);
   backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px -12px rgba(40, 20, 60, 0.06);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 
   &:hover {
     transform: translateY(-4px);
-    border-color: color-mix(in oklab, var(--gold) 40%, transparent);
-    box-shadow: 0 16px 40px -16px color-mix(in oklab, var(--violet) 40%, transparent);
+    border-color: color-mix(in oklab, var(--violet) 35%, transparent);
+    box-shadow: 0 16px 40px -14px color-mix(in oklab, var(--violet) 25%, transparent);
+  }
+}
+
+@utility float-gentle {
+  animation: float-slow 10s ease-in-out infinite;
+}
+
+@utility pulse-soft {
+  animation: pulse-ring 4s ease-in-out infinite;
+}
+
+@utility hover-lively-card {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.35s ease;
+  &:hover {
+    transform: translateY(-5px) scale(1.015);
+    border-color: color-mix(in oklab, var(--violet) 35%, transparent);
+    box-shadow: 0 16px 40px -14px color-mix(in oklab, var(--violet) 20%, transparent);
   }
 }
 
@@ -340,3 +366,5 @@
     transition-duration: 0.001ms !important;
   }
 }
+
+

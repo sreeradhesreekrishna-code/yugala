@@ -94,24 +94,24 @@ function StatCard({
     <Reveal delay={delay}>
       <div
         ref={cardRef}
-        className="group relative overflow-hidden rounded-xl border border-gold/15 bg-surface/60 p-4 sm:p-6 backdrop-blur-md transition-all duration-300 hover:border-gold/35 hover:-translate-y-1"
+        className="group relative overflow-hidden rounded-2xl border border-border/80 bg-white/90 p-4 sm:p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-violet/30 hover:shadow-md hover:-translate-y-1"
       >
         <div className="flex items-center justify-between mb-3">
-          <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg border border-gold/25 bg-background/80 text-gold shadow-sm">
+          <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl border border-violet/20 bg-violet/10 text-violet shadow-xs">
             <IconComponent size={20} className="sm:w-5 sm:h-5" />
           </div>
-          <span className="font-jakarta text-[0.6rem] uppercase tracking-wider text-gold/80 bg-gold/10 px-2 py-0.5 rounded-full">
+          <span className="font-jakarta text-[0.6rem] uppercase tracking-wider text-violet font-semibold bg-violet/10 border border-violet/20 px-2 py-0.5 rounded-full">
             Active
           </span>
         </div>
 
         {/* Clean Standardized Number Typography */}
-        <div className="font-outfit text-2xl font-semibold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
-          <span className="text-gilded">{count.toLocaleString()}</span>
-          <span className="text-gold font-normal ml-0.5">{stat.suffix}</span>
+        <div className="font-serif text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
+          <span className="text-violet">{count.toLocaleString()}</span>
+          <span className="text-crimson font-normal ml-0.5">{stat.suffix}</span>
         </div>
 
-        <h3 className="mt-1.5 font-outfit text-xs font-medium tracking-wide text-foreground sm:text-sm">
+        <h3 className="mt-1.5 font-jakarta text-xs font-semibold tracking-wide text-foreground sm:text-sm">
           {stat.label}
         </h3>
         <p className="mt-0.5 font-jakarta text-[0.7rem] leading-snug text-muted-foreground hidden sm:block">
@@ -121,3 +121,4 @@ function StatCard({
     </Reveal>
   );
 }
+

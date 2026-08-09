@@ -48,7 +48,7 @@ export function FloatingActions() {
       <a
         href="#contact"
         aria-label="Book a Session"
-        className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-gold/40 bg-surface/90 text-gold shadow-md backdrop-blur-md transition-transform hover:scale-105 active:scale-95"
+        className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-violet/20 bg-white text-violet shadow-md backdrop-blur-md transition-transform hover:scale-105 active:scale-95"
       >
         <Calendar size={18} />
       </a>
@@ -57,14 +57,14 @@ export function FloatingActions() {
       <button
         onClick={scrollToTop}
         aria-label="Scroll to top"
-        className="relative flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-gold/20 bg-surface/90 text-gold shadow-md backdrop-blur-md transition-transform hover:scale-105 active:scale-95"
+        className="relative flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-violet/20 bg-white text-violet shadow-md backdrop-blur-md transition-transform hover:scale-105 active:scale-95"
       >
         <svg className="absolute inset-0 h-full w-full -rotate-90 transform" viewBox="0 0 40 40">
           <circle
             cx="20"
             cy="20"
             r="16"
-            className="stroke-gold/20"
+            className="stroke-violet/15"
             strokeWidth="2"
             fill="transparent"
           />
@@ -72,7 +72,7 @@ export function FloatingActions() {
             cx="20"
             cy="20"
             r="16"
-            className="stroke-gold transition-all duration-150"
+            className="stroke-violet transition-all duration-150"
             strokeWidth="2"
             fill="transparent"
             strokeDasharray={circumference}
@@ -85,3 +85,4 @@ export function FloatingActions() {
     </div>
   );
 }
+

@@ -5,15 +5,19 @@ const logo = "/Logo.jpeg";
 
 export const NAV_ITEMS = [
   { label: "Home", id: "home" },
-  { label: "About", id: "about" },
-  { label: "Programs", id: "programs" },
-  { label: "Membership", id: "membership" },
+  { label: "Overview", id: "overview" },
+  { label: "Healing", id: "healing" },
+  { label: "Manifestation", id: "manifestation" },
+  { label: "Awakening", id: "awakening" },
+  { label: "Method", id: "method" },
   { label: "Academy", id: "academy" },
-  { label: "Flow", id: "session-flow" },
-  { label: "Healing Kits", id: "kits" },
-  { label: "Partner", id: "partner" },
-  { label: "Events", id: "events" },
-  { label: "Blog", id: "blog" },
+  { label: "Membership", id: "membership" },
+  { label: "Consultations", id: "consultations" },
+  { label: "Resources", id: "resources" },
+  { label: "Workshops", id: "workshops" },
+  { label: "Community", id: "community" },
+  { label: "About", id: "about" },
+  { label: "Upcoming", id: "upcoming" },
   { label: "Contact", id: "contact" },
 ];
 
@@ -48,13 +52,13 @@ export function Nav() {
       <div
         className={`mx-auto flex max-w-7xl items-center justify-between rounded-full px-3.5 py-2 sm:px-6 sm:py-2.5 transition-all duration-300 ${
           scrolled
-            ? "border border-gold/25 bg-background/90 shadow-md backdrop-blur-xl"
-            : "border border-gold/10 bg-background/60 backdrop-blur-md"
+            ? "border border-border/80 bg-white/90 shadow-md backdrop-blur-xl"
+            : "border border-border/40 bg-white/70 shadow-sm backdrop-blur-md"
         }`}
       >
         {/* Brand Logo & Title */}
         <a href="#home" className="flex items-center gap-2.5">
-          <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full border border-gold/30 bg-background p-0.5 shadow-sm">
+          <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full border border-violet/20 bg-white p-0.5 shadow-xs">
             <img
               src={logo}
               alt="Yugala emblem"
@@ -62,27 +66,27 @@ export function Nav() {
             />
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="font-outfit text-base font-semibold tracking-wide text-gilded sm:text-lg">
+            <span className="font-serif text-base sm:text-lg font-bold tracking-wide text-violet">
               YUGALA LIFE
             </span>
             <span className="font-jakarta text-[0.55rem] uppercase tracking-[0.25em] text-muted-foreground hidden sm:block">
-              Inner Healing Centre
+              INNER HEALING CENTER
             </span>
           </div>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1 rounded-full border border-gold/15 bg-surface/40 p-1 backdrop-blur-md">
-          {NAV_ITEMS.slice(0, 7).map((item) => {
+        <nav className="hidden xl:flex items-center gap-1 rounded-full border border-border/60 bg-white/80 p-1 backdrop-blur-md shadow-xs">
+          {NAV_ITEMS.slice(0, 8).map((item) => {
             const isActive = activeSection === item.id;
             return (
               <a
                 key={item.label}
                 href={`#${item.id}`}
-                className={`relative rounded-full px-3.5 py-1.5 font-jakarta text-xs font-medium transition-all duration-200 ${
+                className={`relative rounded-full px-3 py-1.5 font-jakarta text-xs font-medium transition-all duration-200 ${
                   isActive
-                    ? "text-gold font-semibold bg-gold/15 border border-gold/30"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-violet font-semibold bg-violet/10 border border-violet/20"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/40"
                 }`}
               >
                 {item.label}
@@ -95,16 +99,16 @@ export function Nav() {
         <div className="flex items-center gap-2">
           <a
             href="#contact"
-            className="hidden sm:inline-flex items-center justify-center rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 font-jakarta text-xs font-medium uppercase tracking-wider text-gold transition-colors hover:bg-gold/20"
+            className="hidden sm:inline-flex items-center justify-center rounded-full bg-violet px-5 py-2 font-jakarta text-xs font-medium uppercase tracking-wider text-white shadow-sm transition-all duration-200 hover:bg-violet/90 hover:shadow-md active:scale-95"
           >
-            Book Session
+            Start Your Journey
           </a>
 
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            className="grid h-9 w-9 place-items-center rounded-full border border-gold/30 bg-surface/80 text-gold shadow-sm backdrop-blur-md transition-transform active:scale-95"
+            className="grid h-9 w-9 place-items-center rounded-full border border-border bg-white text-violet shadow-xs backdrop-blur-md transition-transform active:scale-95 xl:hidden"
           >
             {open ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -113,11 +117,11 @@ export function Nav() {
 
       {/* Mobile Drawer Menu */}
       <div
-        className={`fixed inset-x-3 top-16 z-40 overflow-hidden rounded-2xl border border-gold/20 bg-background/95 p-4 shadow-xl backdrop-blur-2xl transition-all duration-300 lg:hidden ${
-          open ? "max-h-[82vh] opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-4 pointer-events-none"
+        className={`fixed inset-x-3 top-16 z-40 overflow-hidden rounded-2xl border border-border/80 bg-white/98 p-4 shadow-xl backdrop-blur-2xl transition-all duration-300 xl:hidden ${
+          open ? "max-h-[85vh] opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-4 pointer-events-none"
         }`}
       >
-        <div className="grid grid-cols-2 gap-1.5 max-h-[55vh] overflow-y-auto pr-1">
+        <div className="grid grid-cols-2 gap-1.5 max-h-[60vh] overflow-y-auto pr-1">
           {NAV_ITEMS.map((item) => {
             const isActive = activeSection === item.id;
             return (
@@ -127,28 +131,28 @@ export function Nav() {
                 onClick={() => setOpen(false)}
                 className={`flex min-h-[44px] items-center justify-between rounded-lg border px-3 py-2 font-jakarta text-xs font-medium transition-all ${
                   isActive
-                    ? "border-gold/40 bg-gold/15 text-gold font-semibold"
-                    : "border-gold/10 bg-surface/40 text-muted-foreground active:bg-surface/80"
+                    ? "border-violet/30 bg-violet/10 text-violet font-semibold"
+                    : "border-border/50 bg-white/60 text-muted-foreground active:bg-muted/40"
                 }`}
               >
                 <span>{item.label}</span>
-                <ChevronRight size={14} className="text-gold/50" />
+                <ChevronRight size={14} className="text-violet/50" />
               </a>
             );
           })}
         </div>
 
-        <div className="mt-4 border-t border-gold/15 pt-3 flex flex-col gap-2">
+        <div className="mt-4 border-t border-border/60 pt-3 flex flex-col gap-2">
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="flex min-h-[44px] items-center justify-center gap-2 rounded-full bg-gold px-5 py-2.5 font-jakarta text-xs font-semibold uppercase tracking-wider text-background shadow-md"
+            className="flex min-h-[44px] items-center justify-center gap-2 rounded-full bg-violet px-5 py-2.5 font-jakarta text-xs font-semibold uppercase tracking-wider text-white shadow-md"
           >
             <Calendar size={15} />
-            <span>Book Healing Session</span>
+            <span>Start Your Journey</span>
           </a>
           <div className="flex items-center justify-between text-[0.7rem] text-muted-foreground px-1 pt-1">
-            <span className="flex items-center gap-1 text-gold">
+            <span className="flex items-center gap-1 text-violet font-medium">
               <Phone size={12} /> +91 94008 98089
             </span>
             <span className="flex items-center gap-1">
@@ -160,3 +164,6 @@ export function Nav() {
     </header>
   );
 }
+
+
+

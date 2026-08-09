@@ -39,13 +39,13 @@ export function LoadingScreen({ onComplete }: { onComplete?: () => void }) {
     >
       {/* Background Soft Ambient Glow */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet/20 blur-[130px]" />
+        <div className="absolute top-1/2 left-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet/10 blur-[130px]" />
       </div>
 
       <div className="relative z-10 flex flex-col items-center text-center">
         {/* Core Emblem */}
-        <div className="relative mb-5 flex h-20 w-20 items-center justify-center rounded-full border border-gold/40 bg-surface/90 p-1 shadow-xl backdrop-blur-md">
-          <div className="spin-slow absolute -inset-2 rounded-full border border-dashed border-gold/30" />
+        <div className="relative mb-5 flex h-20 w-20 items-center justify-center rounded-full border border-violet/20 bg-white p-1 shadow-lg backdrop-blur-md">
+          <div className="spin-slow absolute -inset-2 rounded-full border border-dashed border-violet/25" />
           <img
             src={logo}
             alt="Yugala Emblem"
@@ -54,7 +54,7 @@ export function LoadingScreen({ onComplete }: { onComplete?: () => void }) {
         </div>
 
         {/* Brand Name */}
-        <h1 className="font-outfit text-xl font-bold tracking-wider text-gilded sm:text-2xl">
+        <h1 className="font-serif text-xl sm:text-2xl font-bold tracking-wider text-violet">
           YUGALA LIFE
         </h1>
         <p className="mt-0.5 font-jakarta text-[0.65rem] uppercase tracking-[0.35em] text-muted-foreground">
@@ -63,13 +63,13 @@ export function LoadingScreen({ onComplete }: { onComplete?: () => void }) {
 
         {/* Progress Bar Track */}
         <div className="mt-6 w-48 max-w-full">
-          <div className="relative h-1 w-full overflow-hidden rounded-full bg-muted/60">
+          <div className="relative h-1 w-full overflow-hidden rounded-full bg-muted/80">
             <div
-              className="h-full rounded-full bg-gold transition-all duration-150 ease-out"
+              className="h-full rounded-full bg-violet transition-all duration-150 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>
-          <div className="mt-2 text-center font-jakarta text-[0.65rem] tracking-wider text-gold/80">
+          <div className="mt-2 text-center font-jakarta text-[0.65rem] tracking-wider text-violet/80 font-medium">
             {progress < 100 ? `Harmonizing... ${progress}%` : "Welcome"}
           </div>
         </div>
@@ -77,3 +77,4 @@ export function LoadingScreen({ onComplete }: { onComplete?: () => void }) {
     </div>
   );
 }
+
