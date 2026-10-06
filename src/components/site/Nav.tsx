@@ -1,29 +1,32 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Calendar, Phone, MapPin, ChevronRight } from "lucide-react";
+import {
+  Home,
+  Info,
+  Compass,
+  Layers,
+  Sparkles,
+  Calendar,
+  Phone,
+  Menu,
+  X,
+  ArrowRight,
+} from "lucide-react";
 
 const logo = "/Logo.jpeg";
 
 export const NAV_ITEMS = [
-  { label: "Home", id: "home" },
-  { label: "Overview", id: "overview" },
-  { label: "Healing", id: "healing" },
-  { label: "Manifestation", id: "manifestation" },
-  { label: "Awakening", id: "awakening" },
-  { label: "Method", id: "method" },
-  { label: "Academy", id: "academy" },
-  { label: "Membership", id: "membership" },
-  { label: "Consultations", id: "consultations" },
-  { label: "Resources", id: "resources" },
-  { label: "Workshops", id: "workshops" },
-  { label: "Community", id: "community" },
-  { label: "About", id: "about" },
-  { label: "Upcoming", id: "upcoming" },
-  { label: "Contact", id: "contact" },
+  { label: "Home", id: "home", icon: Home },
+  { label: "About", id: "about", icon: Info },
+  { label: "Programs", id: "overview", icon: Compass },
+  { label: "The Method", id: "method", icon: Layers },
+  { label: "Membership", id: "membership", icon: Sparkles },
+  { label: "Events", id: "upcoming", icon: Calendar },
+  { label: "Contact", id: "contact", icon: Phone },
 ];
 
 export function Nav() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
@@ -31,7 +34,7 @@ export function Nav() {
       setScrolled(window.scrollY > 20);
 
       const sections = NAV_ITEMS.map((item) => document.getElementById(item.id)).filter(Boolean);
-      const scrollPos = window.scrollY + 180;
+      const scrollPos = window.scrollY + 140;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const sec = sections[i];
@@ -48,45 +51,45 @@ export function Nav() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-3 py-2.5 sm:px-6 sm:py-3.5 transition-all duration-300">
-      <div
-        className={`mx-auto flex max-w-7xl items-center justify-between rounded-full px-3.5 py-2 sm:px-6 sm:py-2.5 transition-all duration-300 ${
-          scrolled
-            ? "border border-border/80 bg-white/90 shadow-md backdrop-blur-xl"
-            : "border border-border/40 bg-white/70 shadow-sm backdrop-blur-md"
-        }`}
-      >
-        {/* Brand Logo & Title */}
-        <a href="#home" className="flex items-center gap-2.5">
-          <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full border border-violet/20 bg-white p-0.5 shadow-xs">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#FBF7F0]/95 shadow-[0_6px_25px_rgba(75,20,111,0.05)] backdrop-blur-md border-b border-[#E8C978]/40"
+          : "bg-[#FBF7F0]/85 backdrop-blur-sm border-b border-[#E8C978]/25"
+      }`}
+    >
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        {/* Brand Logo & Wordmark */}
+        <a href="#home" className="group flex items-center gap-3">
+          <div className="relative h-11 w-11 overflow-hidden rounded-full border border-[#D9A52E] p-0.5 shadow-xs transition-transform duration-300 group-hover:scale-105 bg-[#FFFDF8]">
             <img
               src={logo}
-              alt="Yugala emblem"
+              alt="Yugala Life Emblem"
               className="h-full w-full rounded-full object-cover"
             />
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="font-serif text-base sm:text-lg font-bold tracking-wide text-violet">
+            <span className="font-serif text-lg sm:text-xl font-semibold tracking-[0.14em] text-[#4B146F]">
               YUGALA LIFE
             </span>
-            <span className="font-jakarta text-[0.55rem] uppercase tracking-[0.25em] text-muted-foreground hidden sm:block">
-              INNER HEALING CENTER
+            <span className="font-sans text-[0.58rem] sm:text-[0.62rem] uppercase tracking-[0.24em] text-[#9B1630] font-medium">
+              Inner Healing Center
             </span>
           </div>
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden xl:flex items-center gap-1 rounded-full border border-border/60 bg-white/80 p-1 backdrop-blur-md shadow-xs">
-          {NAV_ITEMS.slice(0, 8).map((item) => {
+        {/* Desktop Horizontal Navigation Links */}
+        <nav className="hidden lg:flex items-center gap-1 rounded-full border border-[#E8C978]/45 bg-[#FFFDF8]/85 px-4 py-1.5 shadow-xs">
+          {NAV_ITEMS.map((item) => {
             const isActive = activeSection === item.id;
             return (
               <a
-                key={item.label}
+                key={item.id}
                 href={`#${item.id}`}
-                className={`relative rounded-full px-3 py-1.5 font-jakarta text-xs font-medium transition-all duration-200 ${
+                className={`rounded-full px-3.5 py-1 font-sans text-xs transition-all duration-200 ${
                   isActive
-                    ? "text-violet font-semibold bg-violet/10 border border-violet/20"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted/40"
+                    ? "bg-[#4B146F] text-white font-semibold shadow-xs"
+                    : "text-[#493B36] hover:bg-[#F0E8F7]/70 hover:text-[#4B146F]"
                 }`}
               >
                 {item.label}
@@ -95,75 +98,71 @@ export function Nav() {
           })}
         </nav>
 
-        {/* Right CTA & Mobile Toggle */}
-        <div className="flex items-center gap-2">
+        {/* Right CTA Button & Mobile Menu Toggle */}
+        <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className="hidden sm:inline-flex items-center justify-center rounded-full bg-violet px-5 py-2 font-jakarta text-xs font-medium uppercase tracking-wider text-white shadow-sm transition-all duration-200 hover:bg-violet/90 hover:shadow-md active:scale-95"
+            className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-[#4B146F] px-5 sm:px-6 py-2.5 font-sans text-xs font-semibold uppercase tracking-wider text-white shadow-xs shadow-[#4B146F]/20 transition-all duration-200 hover:bg-[#65239A] hover:-translate-y-0.5 active:translate-y-0"
           >
-            Start Your Journey
+            <span>Start Journey</span>
+            <ArrowRight size={13} />
           </a>
 
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            className="grid h-9 w-9 place-items-center rounded-full border border-border bg-white text-violet shadow-xs backdrop-blur-md transition-transform active:scale-95 xl:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#E8C978]/50 bg-[#FFFDF8] text-[#4B146F] shadow-xs lg:hidden transition-colors hover:bg-[#F0E8F7]"
           >
-            {open ? <X size={18} /> : <Menu size={18} />}
+            {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile / Tablet Dropdown Menu */}
       <div
-        className={`fixed inset-x-3 top-16 z-40 overflow-hidden rounded-2xl border border-border/80 bg-white/98 p-4 shadow-xl backdrop-blur-2xl transition-all duration-300 xl:hidden ${
-          open ? "max-h-[85vh] opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-4 pointer-events-none"
+        className={`lg:hidden fixed inset-x-0 top-20 z-40 overflow-hidden border-b border-[#E8C978]/40 bg-[#FBF7F0]/98 px-5 py-5 shadow-xl backdrop-blur-xl transition-all duration-300 ${
+          open ? "max-h-[85vh] opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-2 pointer-events-none py-0"
         }`}
       >
-        <div className="grid grid-cols-2 gap-1.5 max-h-[60vh] overflow-y-auto pr-1">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-[60vh] overflow-y-auto pr-1">
           {NAV_ITEMS.map((item) => {
             const isActive = activeSection === item.id;
+            const Icon = item.icon;
             return (
               <a
-                key={item.label}
+                key={item.id}
                 href={`#${item.id}`}
                 onClick={() => setOpen(false)}
-                className={`flex min-h-[44px] items-center justify-between rounded-lg border px-3 py-2 font-jakarta text-xs font-medium transition-all ${
+                className={`flex items-center gap-2 rounded-xl px-3.5 py-2.5 font-sans text-xs transition-all ${
                   isActive
-                    ? "border-violet/30 bg-violet/10 text-violet font-semibold"
-                    : "border-border/50 bg-white/60 text-muted-foreground active:bg-muted/40"
+                    ? "bg-[#4B146F] text-white font-semibold shadow-xs"
+                    : "bg-[#FFFDF8] text-[#493B36] border border-[#E8C978]/40 hover:bg-[#F0E8F7]/60"
                 }`}
               >
+                <Icon size={14} className={isActive ? "text-[#E8C978]" : "text-[#4B146F]"} />
                 <span>{item.label}</span>
-                <ChevronRight size={14} className="text-violet/50" />
               </a>
             );
           })}
         </div>
 
-        <div className="mt-4 border-t border-border/60 pt-3 flex flex-col gap-2">
+        <div className="mt-4 pt-3.5 border-t border-[#E8C978]/35 flex flex-col sm:flex-row justify-between items-center gap-2.5 text-xs">
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="flex min-h-[44px] items-center justify-center gap-2 rounded-full bg-violet px-5 py-2.5 font-jakarta text-xs font-semibold uppercase tracking-wider text-white shadow-md"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#4B146F] px-6 py-2.5 font-sans text-xs font-semibold uppercase tracking-wider text-white shadow-xs hover:bg-[#65239A]"
           >
-            <Calendar size={15} />
             <span>Start Your Journey</span>
+            <ArrowRight size={13} />
           </a>
-          <div className="flex items-center justify-between text-[0.7rem] text-muted-foreground px-1 pt-1">
-            <span className="flex items-center gap-1 text-violet font-medium">
-              <Phone size={12} /> +91 94008 98089
-            </span>
-            <span className="flex items-center gap-1">
-              <MapPin size={12} className="text-crimson" /> Thrissur, Kerala
-            </span>
+          <div className="flex items-center gap-4 text-[#493B36]/80 font-sans text-xs">
+            <span>WhatsApp: +91 94008 98089</span>
+            <span>•</span>
+            <span>Thrissur, Kerala</span>
           </div>
         </div>
       </div>
     </header>
   );
 }
-
-
-

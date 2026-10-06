@@ -17,13 +17,13 @@ export function LoadingScreen({ onComplete }: { onComplete?: () => void }) {
             setTimeout(() => {
               setHidden(true);
               onComplete?.();
-            }, 850);
-          }, 150);
+            }, 750);
+          }, 100);
           return 100;
         }
-        return prev + 12;
+        return prev + 15;
       });
-    }, 55);
+    }, 45);
 
     return () => clearInterval(interval);
   }, [onComplete]);
@@ -33,48 +33,42 @@ export function LoadingScreen({ onComplete }: { onComplete?: () => void }) {
   return (
     <div
       aria-hidden={revealing}
-      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background px-4 transition-transform duration-[850ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
-        revealing ? "-translate-y-full shadow-2xl" : "translate-y-0"
+      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#FBF7F0] px-4 transition-transform duration-[750ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
+        revealing ? "-translate-y-full shadow-2xl shadow-[#4B146F]/15" : "translate-y-0"
       }`}
     >
-      {/* Background Soft Ambient Glow */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet/10 blur-[130px]" />
-      </div>
-
       <div className="relative z-10 flex flex-col items-center text-center">
         {/* Core Emblem */}
-        <div className="relative mb-5 flex h-20 w-20 items-center justify-center rounded-full border border-violet/20 bg-white p-1 shadow-lg backdrop-blur-md">
-          <div className="spin-slow absolute -inset-2 rounded-full border border-dashed border-violet/25" />
+        <div className="relative mb-4.5 flex h-16 w-16 items-center justify-center rounded-full border border-[#D9A52E] bg-[#FFFDF8] p-1 shadow-xs">
+          <div className="spin-very-slow absolute -inset-2 rounded-full border border-dashed border-[#D9A52E]/50" />
           <img
             src={logo}
-            alt="Yugala Emblem"
+            alt="Yugala Life Emblem"
             className="h-full w-full rounded-full object-cover"
           />
         </div>
 
         {/* Brand Name */}
-        <h1 className="font-serif text-xl sm:text-2xl font-bold tracking-wider text-violet">
+        <h1 className="font-serif text-xl font-medium tracking-[0.16em] text-[#4B146F]">
           YUGALA LIFE
         </h1>
-        <p className="mt-0.5 font-jakarta text-[0.65rem] uppercase tracking-[0.35em] text-muted-foreground">
-          Inner Healing Centre
+        <p className="mt-0.5 font-sans text-[0.6rem] uppercase tracking-[0.25em] text-[#9B1630] font-medium">
+          Inner Healing Center
         </p>
 
-        {/* Progress Bar Track */}
-        <div className="mt-6 w-48 max-w-full">
-          <div className="relative h-1 w-full overflow-hidden rounded-full bg-muted/80">
+        {/* Progress Bar */}
+        <div className="mt-6 w-44 max-w-full">
+          <div className="relative h-[2px] w-full overflow-hidden rounded-full bg-[#E8C978]/40">
             <div
-              className="h-full rounded-full bg-violet transition-all duration-150 ease-out"
+              className="h-full rounded-full bg-gradient-to-r from-[#4B146F] to-[#D9A52E] transition-all duration-150 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>
-          <div className="mt-2 text-center font-jakarta text-[0.65rem] tracking-wider text-violet/80 font-medium">
-            {progress < 100 ? `Harmonizing... ${progress}%` : "Welcome"}
+          <div className="mt-2.5 text-center font-sans text-[0.65rem] tracking-wider text-[#493B36]/80">
+            {progress < 100 ? `Harmonizing...` : "Welcome"}
           </div>
         </div>
       </div>
     </div>
   );
 }
-

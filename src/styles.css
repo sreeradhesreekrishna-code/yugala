@@ -5,18 +5,22 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Yugala Life design system.
- * Light Premium Spiritual Wellness: Warm Ivory, Soft Lavender, Blush Pink, Electric Violet, Rose, Warm Gold.
+ * Yugala Life Design System
+ * Premium Indian Holistic Wellness × Spiritual Luxury × Editorial Design × Modern Retreat
+ * Cream (#FBF7F0), Ivory (#FFFDF8), Soft Lavender (#F0E8F7), Pale Pink (#F8EEF2),
+ * Deep Plum (#4B146F), Royal Purple (#65239A), Deep Burgundy (#9B1630),
+ * Warm Gold (#D9A52E), Soft Gold (#E8C978), Dark Brown (#493B36), White (#FFFFFF).
  */
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-3xl: 28px;
+  --radius-4xl: 32px;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -36,92 +40,74 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  /* Yugala Palette Tokens */
+  --color-plum: var(--plum);
+  --color-purple: var(--purple);
+  --color-burgundy: var(--burgundy);
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
-  --color-violet: var(--violet);
-  --color-crimson: var(--crimson);
-  --color-surface: var(--surface);
-  --font-display: "Cormorant Garamond", "Outfit", "Syne", serif;
-  --font-syne: "Syne", sans-serif;
-  --font-outfit: "Outfit", sans-serif;
+  --color-cream: var(--cream);
+  --color-ivory: var(--ivory);
+  --color-lavender: var(--lavender);
+  --color-pale-pink: var(--pale-pink);
+  --color-brown: var(--brown);
+  --color-brown-muted: var(--brown-muted);
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
   --font-serif: "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", "Manrope", system-ui, sans-serif;
+  --font-script: "Allura", cursive;
 }
 
 :root {
-  --radius: 1.25rem;
+  --radius: 16px;
 
-  /* Light Primary Background: Warm Ivory (#FFFDFC) */
-  --background: oklch(0.99 0.005 85);
-  /* Deep Charcoal Text (#241B35) */
-  --foreground: oklch(0.24 0.05 300);
-  /* Supporting Background: Soft Warm Cream (#FFF8F1) */
-  --surface: oklch(0.985 0.01 75);
+  /* Primary Palette Tokens */
+  --plum: #4B146F;
+  --purple: #65239A;
+  --burgundy: #9B1630;
+  --gold: #D9A52E;
+  --gold-soft: #E8C978;
 
-  /* Card: Pure White / Translucent Ivory with Soft Elevation */
-  --card: oklch(1 0 0 / 92%);
-  --card-foreground: oklch(0.24 0.05 300);
-  --popover: oklch(0.99 0.005 85);
-  --popover-foreground: oklch(0.24 0.05 300);
+  --cream: #FBF7F0;
+  --ivory: #FFFDF8;
+  --lavender: #F0E8F7;
+  --pale-pink: #F8EEF2;
 
-  /* Brilliant Electric Violet (#5B20B5) */
-  --primary: oklch(0.45 0.24 300);
-  --primary-foreground: oklch(0.99 0.005 85);
-  --violet: oklch(0.48 0.24 300);
+  --brown: #493B36;
+  --brown-muted: #6B5B54;
 
-  /* Rose / Deep Pink (#D94A67) */
-  --secondary: oklch(0.58 0.19 15);
-  --secondary-foreground: oklch(0.99 0.005 85);
-  --crimson: oklch(0.58 0.19 15);
+  /* Semantic System Defaults */
+  --background: #FBF7F0;     /* Cream background (60% dominant space) */
+  --foreground: #493B36;     /* Dark brown text */
 
-  /* Warm Gold (#D99A18) */
-  --accent: oklch(0.72 0.15 75);
-  --accent-foreground: oklch(0.24 0.05 300);
-  --gold: oklch(0.72 0.15 75);
-  --gold-soft: oklch(0.92 0.07 80);
+  --card: #FFFDF8;           /* Ivory surface */
+  --card-foreground: #493B36;
+  --popover: #FFFDF8;
+  --popover-foreground: #493B36;
 
-  /* Muted Surfaces & Text */
-  --muted: oklch(0.96 0.015 300);
-  --muted-foreground: oklch(0.48 0.03 300);
-  --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.99 0.005 85);
-  --border: oklch(0.92 0.02 300);
-  --input: oklch(0.92 0.02 300);
-  --ring: oklch(0.48 0.24 300);
+  --primary: #4B146F;        /* Deep Plum */
+  --primary-foreground: #FFFFFF;
 
-  /* Ambient Light Gradients */
-  --gradient-aura: radial-gradient(
-      65% 65% at 20% 15%,
-      color-mix(in oklab, var(--violet) 10%, transparent),
-      transparent 70%
-    ),
-    radial-gradient(
-      60% 60% at 85% 30%,
-      color-mix(in oklab, var(--crimson) 8%, transparent),
-      transparent 70%
-    ),
-    radial-gradient(
-      50% 50% at 50% 80%,
-      color-mix(in oklab, var(--gold) 10%, transparent),
-      transparent 75%
-    );
+  --secondary: #F0E8F7;      /* Soft Lavender */
+  --secondary-foreground: #4B146F;
 
-  --gradient-gold: linear-gradient(
-    110deg,
-    var(--gold-soft),
-    var(--gold) 50%,
-    color-mix(in oklab, var(--gold) 70%, var(--crimson)) 100%
-  );
+  --accent: #D9A52E;         /* Warm Gold */
+  --accent-foreground: #493B36;
 
-  --gradient-royal: linear-gradient(
-    135deg,
-    var(--violet),
-    color-mix(in oklab, var(--violet) 70%, var(--crimson))
-  );
+  --muted: #F8EEF2;          /* Pale Pink */
+  --muted-foreground: #6B5B54;
 
-  --shadow-glow: 0 18px 50px -15px color-mix(in oklab, var(--violet) 18%, transparent);
-  --shadow-gold: 0 16px 45px -16px color-mix(in oklab, var(--gold) 22%, transparent);
-  --shadow-soft: 0 10px 35px -10px rgba(40, 20, 60, 0.06);
+  --destructive: #9B1630;    /* Deep Burgundy */
+  --destructive-foreground: #FFFFFF;
+
+  --border: rgba(232, 201, 120, 0.45);
+  --input: rgba(232, 201, 120, 0.55);
+  --ring: #65239A;
+
+  --shadow-subtle: 0 6px 24px rgba(75, 20, 111, 0.04);
+  --shadow-elevated: 0 14px 38px rgba(75, 20, 111, 0.08);
 }
 
 @layer base {
@@ -131,7 +117,7 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 2rem;
     max-width: 100%;
     overflow-x: hidden;
   }
@@ -143,70 +129,83 @@
     -webkit-font-smoothing: antialiased;
     max-width: 100%;
     overflow-x: hidden;
+    line-height: 1.65;
   }
 
   h1,
   h2,
-  h3 {
+  h3,
+  h4 {
     font-family: var(--font-display);
-    font-weight: 400;
+    color: var(--color-plum);
     letter-spacing: -0.01em;
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--violet) 25%, transparent);
-    color: var(--foreground);
+    background: rgba(217, 165, 46, 0.3);
+    color: #4B146F;
   }
 }
 
-@utility text-gilded {
-  color: var(--violet);
-  font-weight: 600;
+/* Botanical and Editorial Utilities */
+@utility font-script {
+  font-family: var(--font-script);
 }
 
-@utility glass-card {
-  background: #ffffff;
-  border: 1px solid oklch(0.92 0.02 300);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 10px 35px -12px rgba(80, 40, 120, 0.06);
-  transition:
-    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.3s ease,
-    box-shadow 0.4s ease;
+@utility font-serif {
+  font-family: var(--font-serif);
+}
+
+@utility font-sans {
+  font-family: var(--font-sans);
+}
+
+@utility editorial-card {
+  background-color: #FFFDF8;
+  border: 1px solid rgba(232, 201, 120, 0.42);
+  border-radius: 24px;
+  box-shadow: 0 8px 30px rgba(75, 20, 111, 0.04);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
 
   &:hover {
-    transform: translateY(-5px);
-    border-color: color-mix(in oklab, var(--violet) 35%, transparent);
-    box-shadow: 0 16px 45px -14px rgba(80, 40, 120, 0.12);
+    transform: translateY(-4px);
+    border-color: rgba(217, 165, 46, 0.7);
+    box-shadow: 0 16px 42px rgba(75, 20, 111, 0.08);
   }
 }
 
-@utility aura {
-  background-image: var(--gradient-aura);
+@utility feature-container {
+  background-color: #FFFDF8;
+  border: 1px solid rgba(232, 201, 120, 0.42);
+  border-radius: 28px;
+  box-shadow: 0 8px 30px rgba(75, 20, 111, 0.04);
 }
 
-@utility sacred-grid {
-  background-image:
-    radial-gradient(circle at center, color-mix(in oklab, var(--violet) 10%, transparent) 1px, transparent 1px);
-  background-size: 36px 36px;
-}
-
-@utility gold-rule {
+@utility thin-divider {
   height: 1px;
   background: linear-gradient(
     90deg,
     transparent,
-    color-mix(in oklab, var(--gold) 60%, transparent),
+    rgba(232, 201, 120, 0.35) 20%,
+    #D9A52E 50%,
+    rgba(232, 201, 120, 0.35) 80%,
     transparent
   );
 }
 
+@utility botanical-subtle {
+  opacity: 0.16;
+  pointer-events: none;
+}
+
 @utility reveal {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(20px);
   transition:
-    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 
   &[data-visible="true"] {
     opacity: 1;
@@ -214,154 +213,23 @@
   }
 }
 
-@keyframes float-slow {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  50% {
-    transform: translate3d(0, -18px, 0) scale(1.03);
-  }
-}
-
-@keyframes shimmer-spin {
+@keyframes spin-very-slow {
   to {
     transform: rotate(360deg);
   }
 }
 
-@keyframes twinkle {
-  0%,
-  100% {
-    opacity: 0.2;
-    transform: translateY(0);
-  }
-  50% {
-    opacity: 0.8;
-    transform: translateY(-10px);
-  }
+@utility spin-very-slow {
+  animation: spin-very-slow 120s linear infinite;
 }
 
-@utility float-orb {
-  animation: float-slow 14s ease-in-out infinite;
+@keyframes subtle-fade {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.65; transform: scale(1.02); }
 }
 
-@utility spin-slow {
-  animation: shimmer-spin 90s linear infinite;
-}
-
-@utility spin-medium {
-  animation: shimmer-spin 20s linear infinite;
-}
-
-@utility twinkle {
-  animation: twinkle 6s ease-in-out infinite;
-}
-
-@utility font-syne {
-  font-family: var(--font-syne);
-}
-
-@utility font-outfit {
-  font-family: var(--font-outfit);
-}
-
-@utility font-number {
-  font-family: var(--font-outfit);
-  font-variant-numeric: tabular-nums;
-}
-
-@utility font-serif {
-  font-family: var(--font-serif);
-}
-
-@utility font-jakarta {
-  font-family: var(--font-sans);
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px -5px color-mix(in oklab, var(--violet) 25%, transparent);
-    border-color: color-mix(in oklab, var(--border) 90%, transparent);
-  }
-  50% {
-    box-shadow: 0 0 35px 2px color-mix(in oklab, var(--violet) 35%, transparent);
-    border-color: color-mix(in oklab, var(--violet) 40%, transparent);
-  }
-}
-
-@keyframes pulse-ring {
-  0% {
-    transform: scale(0.96);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.25;
-  }
-  100% {
-    transform: scale(0.96);
-    opacity: 0.7;
-  }
-}
-
-@keyframes gradient-flow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@utility animate-pulse-glow {
-  animation: pulse-glow 4s ease-in-out infinite;
-}
-
-@utility animate-pulse-ring {
-  animation: pulse-ring 3s ease-in-out infinite;
-}
-
-@utility glass-floating-pill {
-  background: #ffffff;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid oklch(0.92 0.02 300);
-  box-shadow: 0 8px 24px -8px rgba(40, 20, 60, 0.08);
-}
-
-@utility glow-card-interactive {
-  background: #ffffff;
-  border: 1px solid oklch(0.92 0.02 300);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 10px 30px -12px rgba(40, 20, 60, 0.06);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-
-  &:hover {
-    transform: translateY(-4px);
-    border-color: color-mix(in oklab, var(--violet) 35%, transparent);
-    box-shadow: 0 16px 40px -14px color-mix(in oklab, var(--violet) 25%, transparent);
-  }
-}
-
-@utility float-gentle {
-  animation: float-slow 10s ease-in-out infinite;
-}
-
-@utility pulse-soft {
-  animation: pulse-ring 4s ease-in-out infinite;
-}
-
-@utility hover-lively-card {
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.35s ease;
-  &:hover {
-    transform: translateY(-5px) scale(1.015);
-    border-color: color-mix(in oklab, var(--violet) 35%, transparent);
-    box-shadow: 0 16px 40px -14px color-mix(in oklab, var(--violet) 20%, transparent);
-  }
+@utility aura-subtle {
+  animation: subtle-fade 8s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -372,5 +240,3 @@
     transition-duration: 0.001ms !important;
   }
 }
-
-

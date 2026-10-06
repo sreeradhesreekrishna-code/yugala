@@ -24,65 +24,64 @@ export function FloatingActions() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const circumference = 2 * Math.PI * 16;
+  const circumference = 2 * Math.PI * 15;
   const strokeDashoffset = circumference - (scrollProgress / 100) * circumference;
 
   return (
     <div
-      className={`fixed bottom-4 right-4 z-40 flex flex-col items-center gap-2.5 transition-all duration-300 ${
+      className={`fixed bottom-5 right-5 z-40 flex flex-col items-center gap-2.5 transition-all duration-300 ${
         visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-6 opacity-0"
       }`}
     >
       {/* WhatsApp Trigger */}
       <a
-        href="https://wa.me/919400898089?text=Hello%20Yugala%20Life,%20I%20would%20like%20to%20book%20a%20healing%20session."
+        href="https://wa.me/919400898089?text=Hello%20Yugala%20Life,%20I%20would%20like%20to%20know%20more%20about%20your%20healing%20programs."
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contact via WhatsApp"
-        className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-emerald-600 text-white shadow-md transition-transform hover:scale-105 active:scale-95"
+        className="flex h-11 w-11 items-center justify-center rounded-full bg-[#4B146F] text-white shadow-md shadow-[#4B146F]/20 border border-[#D9A52E]/40 transition-all hover:bg-[#65239A] hover:scale-105 active:scale-95"
       >
-        <MessageCircle size={19} />
+        <MessageCircle size={18} />
       </a>
 
-      {/* Book Session Trigger */}
+      {/* Book Session / Contact Trigger */}
       <a
         href="#contact"
         aria-label="Book a Session"
-        className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-violet/20 bg-white text-violet shadow-md backdrop-blur-md transition-transform hover:scale-105 active:scale-95"
+        className="flex h-11 w-11 items-center justify-center rounded-full border border-[#E8C978]/60 bg-[#FFFDF8] text-[#4B146F] shadow-xs transition-all hover:bg-[#F0E8F7] hover:scale-105 active:scale-95"
       >
-        <Calendar size={18} />
+        <Calendar size={17} />
       </a>
 
       {/* Scroll to Top */}
       <button
         onClick={scrollToTop}
         aria-label="Scroll to top"
-        className="relative flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-violet/20 bg-white text-violet shadow-md backdrop-blur-md transition-transform hover:scale-105 active:scale-95"
+        className="relative flex h-11 w-11 items-center justify-center rounded-full border border-[#E8C978]/60 bg-[#FFFDF8] text-[#4B146F] shadow-xs transition-all hover:bg-[#F0E8F7] hover:scale-105 active:scale-95"
       >
-        <svg className="absolute inset-0 h-full w-full -rotate-90 transform" viewBox="0 0 40 40">
+        <svg className="absolute inset-0 h-full w-full -rotate-90 transform" viewBox="0 0 36 36">
           <circle
-            cx="20"
-            cy="20"
-            r="16"
-            className="stroke-violet/15"
-            strokeWidth="2"
+            cx="18"
+            cy="18"
+            r="15"
+            className="stroke-[#E8C978]/30"
+            strokeWidth="1.5"
             fill="transparent"
           />
           <circle
-            cx="20"
-            cy="20"
-            r="16"
-            className="stroke-violet transition-all duration-150"
-            strokeWidth="2"
+            cx="18"
+            cy="18"
+            r="15"
+            className="stroke-[#D9A52E] transition-all duration-150"
+            strokeWidth="1.5"
             fill="transparent"
             strokeDasharray={circumference}
             strokeDashoffset={strokeDashoffset}
             strokeLinecap="round"
           />
         </svg>
-        <ArrowUp size={16} className="relative z-10" />
+        <ArrowUp size={15} className="relative z-10" />
       </button>
     </div>
   );
 }
-
